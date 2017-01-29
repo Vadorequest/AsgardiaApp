@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { Image, View, StyleSheet, Text, Dimensions } from 'react-native';
+import { Image, View, StyleSheet, Text, ScrollView } from 'react-native';
 
-const {height, width} = Dimensions.get('window');
 const styles = StyleSheet.create({
   image: {
-    height: height,
-    width: width,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // remove width and height to override fixed static size
+    width: null,
+    height: null,
+    backgroundColor: 'rgba(0,0,0,0)',
+    // resizeMode: 'stretch',
   }
 });
 
@@ -13,16 +18,72 @@ const styles = StyleSheet.create({
 export default class HomeTab extends Component {
   render() {
     return (
-      <View>
         <Image
           source={require('./img/background.png')}
           style={styles.image}
+          resizeMode={Image.resizeMode.stretch}
         >
-          <Text style={{color: 'white'}}>
-            Home
-          </Text>
+          <ScrollView
+            automaticallyAdjustContentInsets={false}
+            onScroll={() => { console.log('onScroll!'); }}
+            scrollEventThrottle={200}
+          >
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'purple'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'white'}}>
+              Home
+            </Text>
+            <Text style={{color: 'orange'}}>
+              Home
+            </Text>
+            <Text style={{color: 'red'}}>
+              Home
+            </Text>
+          </ScrollView>
         </Image>
-      </View>
     )
   }
 }
